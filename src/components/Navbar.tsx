@@ -14,13 +14,13 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md">
+        <nav className="fixed top-0 left-0 right-0 z-50 border-b border-lavender-400/5 bg-twilight-950/80 backdrop-blur-xl">
             <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
                 <Link
                     href="/"
-                    className="font-mono text-sm font-semibold tracking-widest text-emerald-400 transition-opacity hover:opacity-80"
+                    className="text-gradient-gold font-mono text-sm font-bold tracking-widest transition-opacity hover:opacity-80"
                 >
-                    JH
+                    ✦ JH
                 </Link>
 
                 <ul className="flex items-center gap-8">
@@ -31,14 +31,14 @@ export default function Navbar() {
                             <li key={href}>
                                 <Link
                                     href={href}
-                                    className={`relative text-sm transition-colors duration-200 ${isActive
-                                            ? "text-emerald-400"
-                                            : "text-neutral-400 hover:text-neutral-200"
+                                    className={`relative text-sm transition-all duration-300 ${isActive
+                                            ? "text-gold-400"
+                                            : "text-lavender-300/50 hover:text-lavender-300"
                                         }`}
                                 >
                                     {label}
                                     {isActive && (
-                                        <span className="absolute -bottom-1 left-0 h-px w-full bg-emerald-400" />
+                                        <span className="absolute -bottom-1 left-0 h-px w-full bg-gradient-to-r from-gold-400 to-sunset-400" />
                                     )}
                                 </Link>
                             </li>

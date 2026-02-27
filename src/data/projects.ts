@@ -10,46 +10,45 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "market-regime-detector",
-    title: "Market Regime Detector",
+    slug: "neural-ode-dynamics",
+    title: "Neural ODE for Physical Dynamics",
     excerpt:
-      "Hidden Markov Model pipeline that classifies equity markets into bull, bear, and sideways regimes using volatility and momentum features.",
+      "Learning continuous-time dynamics of physical systems using Neural ODEs, trained on simulated pendulum and spring-mass data.",
     description:
-      "A quantitative research tool that applies Hidden Markov Models to daily equity returns, classifying market environments into distinct regimes. The pipeline ingests OHLCV data, engineers features (realized volatility, momentum z-scores, volume profiles), fits an HMM via the Baum-Welch algorithm, and outputs regime probabilities with transition matrices. Includes a Streamlit dashboard for interactive exploration of regime histories across multiple tickers.",
-    tags: ["Python", "HMM", "Time Series", "Streamlit"],
-    github: "https://github.com/jinho/market-regime-detector",
+      "A research project exploring Neural Ordinary Differential Equations for modeling physical systems. The model learns the governing dynamics of pendulums and spring-mass systems directly from trajectory data, without explicit knowledge of the underlying equations. Implemented a custom ODE solver with adjoint sensitivity methods for memory-efficient backpropagation. Achieved <2% trajectory prediction error over 10-second horizons on held-out initial conditions.",
+    tags: ["PyTorch", "Neural ODEs", "Physics", "Differential Equations"],
+    github: "https://github.com/jinho/neural-ode-dynamics",
   },
   {
-    slug: "options-pricing-engine",
-    title: "Options Pricing Engine",
+    slug: "diffusion-image-gen",
+    title: "Diffusion Model from Scratch",
     excerpt:
-      "High-performance Monte Carlo and Black-Scholes pricing engine for vanilla and exotic options with Greeks computation.",
+      "Minimal implementation of a denoising diffusion probabilistic model (DDPM) trained on CIFAR-10 with custom noise scheduling.",
     description:
-      "A from-scratch options pricing library supporting Black-Scholes analytical solutions, binomial trees, and GPU-accelerated Monte Carlo simulation for path-dependent exotics (Asian, barrier, lookback). Computes first- and second-order Greeks via finite differences and algorithmic differentiation. Benchmarked against QuantLib with <0.1% deviation on vanilla contracts. Written in C++ with Python bindings via pybind11.",
-    tags: ["C++", "Python", "Monte Carlo", "Quantitative Finance"],
-    github: "https://github.com/jinho/options-pricing-engine",
-    live: "https://options-engine-demo.vercel.app",
+      "Built a denoising diffusion probabilistic model from first principles to deeply understand the generative modeling pipeline. Implements the forward noising process, reverse denoising with a U-Net backbone, and both linear and cosine noise schedules. Trained on CIFAR-10 with FID score tracking. Includes a notebook walkthrough of the math behind score matching and the ELBO derivation.",
+    tags: ["PyTorch", "Generative Models", "Computer Vision", "Math"],
+    github: "https://github.com/jinho/diffusion-from-scratch",
   },
   {
-    slug: "signal-backtest-framework",
-    title: "Signal Backtest Framework",
+    slug: "physics-informed-nn",
+    title: "Physics-Informed Neural Networks",
     excerpt:
-      "Event-driven backtesting framework for systematic trading strategies with realistic execution modeling.",
+      "Solving PDEs with neural networks by encoding physical laws directly into the loss function — applied to heat and wave equations.",
     description:
-      "An event-driven backtesting engine designed for alpha research. Supports vectorized signal generation, order management with slippage/commission models, and portfolio-level risk attribution. Features include walk-forward optimization, Monte Carlo performance analysis, and automated report generation with tear sheets. Processes 10 years of minutely data for 500 names in under 3 minutes on commodity hardware.",
-    tags: ["Python", "Pandas", "NumPy", "Risk Management"],
-    github: "https://github.com/jinho/signal-backtest",
+      "Implemented Physics-Informed Neural Networks (PINNs) to solve partial differential equations without mesh-based numerical methods. The network is trained to satisfy both boundary conditions and the governing PDE via a physics-based loss term. Applied to the 1D heat equation and 2D wave equation, comparing convergence and accuracy against finite difference baselines. Explores the effect of collocation point sampling strategies on solution quality.",
+    tags: ["Python", "PINNs", "PDEs", "Scientific Computing"],
+    github: "https://github.com/jinho/physics-informed-nn",
   },
   {
-    slug: "portfolio-optimizer",
-    title: "Portfolio Optimizer",
+    slug: "transformer-attention-viz",
+    title: "Transformer Attention Visualizer",
     excerpt:
-      "Mean-variance and risk-parity portfolio construction tool with constraint handling and regime-aware allocation.",
+      "Interactive tool for visualizing multi-head self-attention patterns in transformer models across different NLP tasks.",
     description:
-      "Implements classical Markowitz mean-variance optimization alongside modern risk-parity and hierarchical risk parity (HRP) approaches. Supports box constraints, sector exposure limits, and turnover penalties. Integrates with the Market Regime Detector to dynamically shift allocation weights based on detected market regimes. Includes an interactive efficient frontier visualization built with D3.js.",
-    tags: ["Python", "Optimization", "D3.js", "Finance"],
-    github: "https://github.com/jinho/portfolio-optimizer",
-    live: "https://portfolio-opt.vercel.app",
+      "An interactive web-based tool for probing and visualizing attention heads in pretrained transformer models (BERT, GPT-2). Supports token-level and head-level attention heatmaps, attention rollout, and gradient-weighted attention. Built to support a research project investigating how different attention heads specialize for syntactic vs. semantic tasks. Frontend built with Next.js and D3.js, with a FastAPI backend serving model inference.",
+    tags: ["Transformers", "NLP", "D3.js", "FastAPI"],
+    github: "https://github.com/jinho/attention-visualizer",
+    live: "https://attention-viz-demo.vercel.app",
   },
 ];
 

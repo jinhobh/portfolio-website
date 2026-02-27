@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jinho | Quantitative Developer",
+  title: "Jinho Bae | ML Research & Physics",
   description:
-    "Portfolio of quantitative development projects — systems, models, and tools for financial markets.",
+    "Portfolio of machine learning research and physics projects — PINNs, kinetic ODE models, and generative models.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} min-h-screen bg-[#0a0a0a] font-sans text-neutral-200 antialiased`}
+        className={`${inter.variable} min-h-screen bg-twilight-950 font-sans text-white/90 antialiased`}
       >
         <Navbar />
         <main className="pt-16">{children}</main>
