@@ -3,25 +3,7 @@ export const metadata = {
     description: "Background, skills, and research interests.",
 };
 
-const skills = [
-    { category: "Languages", items: ["Python", "Java", "TypeScript"] },
-    {
-        category: "ML & Deep Learning",
-        items: ["PyTorch", "JAX", "Diffusion Models", "Physics-Informed Neural Networks"],
-    },
-    {
-        category: "Physics & Math",
-        items: ["Differential Equations",
-            "Linear Algebra",
-            "Probability Theory",
-            "Advanced Calculus"
-        ],
-    },
-    {
-        category: "Tools & Infra",
-        items: ["Git", "LaTeX"],
-    },
-];
+import SkillsSection from "../../components/SkillsSection";
 
 export default function AboutPage() {
     return (
@@ -59,26 +41,7 @@ export default function AboutPage() {
                     Skills &amp; Tools
                 </h2>
 
-                <div className="mt-6 grid gap-8 sm:grid-cols-2">
-                    {skills.map(({ category, items }) => (
-                        <div key={category}>
-                            <h3 className="text-sm font-semibold text-white/80">
-                                {category}
-                            </h3>
-                            <ul className="mt-2 space-y-1">
-                                {items.map((item) => (
-                                    <li
-                                        key={item}
-                                        className="flex items-center gap-2 text-sm text-lavender-300/40"
-                                    >
-                                        <span className="h-1 w-1 rounded-full bg-gold-400/40" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+                <SkillsSection />
             </div>
         </section>
     );
