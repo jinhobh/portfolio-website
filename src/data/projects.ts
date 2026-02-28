@@ -33,9 +33,9 @@ export const projects: Project[] = [
     slug: "physics-informed-nn",
     title: "Physics-Informed Neural Networks",
     excerpt:
-      "Solving PDEs with neural networks by encoding physical laws directly into the loss function — applied to heat and wave equations.",
+      "Solving PDEs with neural networks by encoding physical laws directly into the loss function.",
     description:
-      "Implemented Physics-Informed Neural Networks (PINNs) to solve partial differential equations without mesh-based numerical methods. The network is trained to satisfy both boundary conditions and the governing PDE via a physics-based loss term. Applied to the 1D heat equation and 2D wave equation, comparing convergence and accuracy against finite difference baselines. Explores the effect of collocation point sampling strategies on solution quality.",
+      "Implemented Physics-Informed Neural Networks (PINNs) to solve partial differential equations without mesh-based numerical methods. The network is trained to satisfy both boundary conditions and the governing PDE (Navier-Stokes) via a physics-based loss term.",
     tags: ["Python", "PINNs", "PDEs", "Scientific Computing"],
     github: "https://github.com/jinho/physics-informed-nn",
   },

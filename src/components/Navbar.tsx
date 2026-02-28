@@ -20,7 +20,7 @@ export default function Navbar() {
                     href="/"
                     className="text-gradient-gold font-mono text-sm font-bold tracking-widest transition-opacity hover:opacity-80"
                 >
-                    ✦ JH
+                    ✦ BB
                 </Link>
 
                 <ul className="flex items-center gap-8">
@@ -32,8 +32,8 @@ export default function Navbar() {
                                 <Link
                                     href={href}
                                     className={`relative text-sm transition-all duration-300 ${isActive
-                                            ? "text-gold-400"
-                                            : "text-lavender-300/50 hover:text-lavender-300"
+                                        ? "text-gold-400"
+                                        : "text-lavender-300/50 hover:text-lavender-300"
                                         }`}
                                 >
                                     {label}
