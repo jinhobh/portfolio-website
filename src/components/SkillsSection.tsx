@@ -1,40 +1,50 @@
 "use client";
 
 import React from "react";
-import { skillsData, SkillCategory } from "../data/skills";
+import { skillsData } from "../data/skillsData";
 import SkillCard from "./SkillCard";
 
 export default function SkillsSection() {
-    const categories: SkillCategory[] = [
-        "Frontend",
-        "Backend",
-        "Machine Learning",
-        "Infrastructure",
-    ];
+    // Organizing the 8 skills into a fashionable 3-2-3 staggered diamond shape
+    const row1 = skillsData.slice(0, 3);
+    const row2 = skillsData.slice(3, 5);
+    const row3 = skillsData.slice(5, 8);
 
     return (
-        <div className="space-y-12 w-full mt-6">
-            {categories.map((category) => {
-                const categorySkills = skillsData.filter((s) => s.category === category);
+        <div className="mt-8 flex w-full flex-col items-center py-10">
+            <div className="relative flex flex-col items-center gap-4 md:gap-6">
 
-                if (categorySkills.length === 0) return null;
+                {/* Ambient background glow for the whole shape */}
+                <div className="pointer-events-none absolute left-1/2 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lavender-400/5 blur-[80px]" />
 
-                return (
-                    <div key={category} className="space-y-4">
-                        <h3 className="flex items-center gap-3 text-lg font-semibold text-white/90">
-                            <span className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
-                            {category}
-                            <span className="h-px flex-1 bg-gradient-to-l from-white/10 to-transparent" />
-                        </h3>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {categorySkills.map((skill) => (
-                                <SkillCard key={skill.name} skill={skill} />
-                            ))}
+                {/* Row 1 */}
+                <div className="flex justify-center gap-4 md:gap-8">
+                    {row1.map((skill, i) => (
+                        <div key={skill.name} className="animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                            <SkillCard skill={skill} />
                         </div>
-                    </div>
-                );
-            })}
+                    ))}
+                </div>
+
+                {/* Row 2 (Staggered offset) */}
+                <div className="flex justify-center gap-4 md:gap-8 px-6 md:px-12">
+                    {row2.map((skill, i) => (
+                        <div key={skill.name} className="animate-fade-in" style={{ animationDelay: `${(i + 3) * 0.1}s` }}>
+                            <SkillCard skill={skill} />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Row 3 */}
+                <div className="flex justify-center gap-4 md:gap-8">
+                    {row3.map((skill, i) => (
+                        <div key={skill.name} className="animate-fade-in" style={{ animationDelay: `${(i + 5) * 0.1}s` }}>
+                            <SkillCard skill={skill} />
+                        </div>
+                    ))}
+                </div>
+
+            </div>
         </div>
     );
 }

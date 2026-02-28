@@ -1,8 +1,7 @@
-import { projects } from "@/data/projects";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectGraph from "@/components/ProjectGraph";
 
 export const metadata = {
-    title: "Projects | Jinho",
+    title: "Projects | Bruce",
     description: "Machine learning research and physics projects.",
 };
 
@@ -24,10 +23,8 @@ export default function ProjectsPage() {
                 </p>
             </div>
 
-            <div className="animate-fade-in-delay mt-12 grid gap-6 sm:grid-cols-2">
-                {projects.map((project) => (
-                    <ProjectCard key={project.slug} project={project} />
-                ))}
+            <div className="animate-fade-in-delay mt-12 w-full">
+                <ProjectGraph />
             </div>
         </section>
     );
